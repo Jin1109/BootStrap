@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 반응 형 웹 디자인이란 무엇입니까?
+   - 모바일 기기에서부터 대형 데스크탑에 이르기까지 모든 장치에 맞게 자동으로 조정되는 웹 사이트를 만드는 것에 관한 것입니다.
+   - 뷰포트는 웹 페이지의 사용자가 볼 수 있는 영역입니다.
+   - viewport 요소는 페이지의 크기돠 배율을 제어하는 방법에 대한 브러우저 지침을 제공합니다.
+     width = device-width 부분은 페이지의 너비를 장치의 화면 너비에 따라 설정합니다.(장치에 따라 다름)
+     initial-scale = 1 부분은 브라우저에 의해 처음로드 될 때 초기 줌 레벨을 설정하는데 원래 크기를 사용하도록 합니다.
+ -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+	background-color: lightgreen;
+}
+/*
+미디어 쿼리는 CSS3에서 도입 된 CSS 기술입니다.
+@media 의 조건에 맞으면 해당 스타일을 적용합니다.
+
+ 1. 미디어 종류
+   screen : 컴푸터 스크린, 태플릿, 모바일 기기
+   print : 프린트에 사용
+   speech : 페이지를 읽어 주는 화면 낭독기
+ 2. max-width : 최대 넓이
+ 3. min-width : 최소 넓이   
+*/   
+@media screen and (max-width: 600px) {
+ body {
+ 	background-color: lightblue; 
+ }
+}
+
+@media screen and (min0width: 601px) and (max-width:900px) {
+ body {
+ 	background-color: lightgray;
+ }
+}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script></script>
+</head>
+<body>
+<p>브라우저 사이즈가 최대 600px 까지는 lightblue <br>
+   601px ~ 900px까지는 lightgray<br>
+       그 외는 lightgreen</p>
+<script>
+	window.onresize=function(){
+		/*
+		windwow.innerWidth : 브라우저 화면의 너비
+		windwow.innerHeight : 브라우저 화면의 높이
+		*/ 
+			document.body.innerHTML = "window.innerWidth: " + window.innerWidth;
+	};
+</script>       
+</body>
+</html>
